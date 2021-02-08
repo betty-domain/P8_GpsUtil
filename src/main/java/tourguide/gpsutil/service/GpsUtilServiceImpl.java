@@ -5,6 +5,7 @@ import gpsUtil.location.Attraction;
 import gpsUtil.location.VisitedLocation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tourguide.gpsutil.controller.GpsUtilController;
 
@@ -19,6 +20,7 @@ import java.util.UUID;
 public class GpsUtilServiceImpl implements IGpsUtilService{
     private static final Logger logger = LogManager.getLogger(GpsUtilServiceImpl.class);
 
+    @Autowired
     private GpsUtil gpsUtil;
 
     /**
@@ -27,7 +29,6 @@ public class GpsUtilServiceImpl implements IGpsUtilService{
     public GpsUtilServiceImpl()
     {
         Locale.setDefault(Locale.US);
-        gpsUtil = new GpsUtil();
     }
 
     /**

@@ -36,7 +36,8 @@ public class GpsUtilServiceTests {
 
             when(gpsUtilMock.getUserLocation(userID)).thenReturn(visitedLocation);
 
-            assertThat(gpsUtilService.getUserLocation(userID)).isNotNull();
+            assertThat(gpsUtilService.getUserLocation(userID).userId).isEqualTo(userID);
+            assertThat(gpsUtilService.getUserLocation(userID).location.latitude).isEqualTo(20d);
         }
 
         @Test
